@@ -1,8 +1,5 @@
 <template>
-  <router-link
-    :to="{ name: $route.name, params: { ...$route.params, member: item.name } }"
-    >{{ item.name }}</router-link
-  >
+  <router-link :to="{ name: $route.name, params: { ...$route.params, member: item.name } }">{{ item.name }}</router-link>
 </template>
 
 <script lang="ts">

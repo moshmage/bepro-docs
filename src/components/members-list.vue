@@ -1,11 +1,12 @@
 <template>
   <div>
-    <ul v-for="[kind, docs] of Object.entries(members)" :key="kind">
+
+    <ul v-for="[kind, docs] of Object.entries(members)" :key="[kind, id].join(`_`)">
       <li>
         <member-list-kind class="SideBarText" :kind="kind"></member-list-kind>
       </li>
       <ul>
-        <li v-for="doc of docs" :key="doc.name">
+        <li v-for="doc of docs" :key="[doc.name, id].join(`_`)">
           <member-list-item class="SideBarText" :item="doc"></member-list-item>
         </li>
       </ul>
@@ -24,6 +25,7 @@ import { Route } from "vue-router";
   components: { MemberListKind, MemberListItem },
 })
 export default class MembersList extends Vue {
+  @Prop({default: `id`}) id!: string;
   @Watch("$route", { immediate: true, deep: true })
   onUrlChange(newVal: Route) {
     let bgB = document.getElementById("backgroundBepro");

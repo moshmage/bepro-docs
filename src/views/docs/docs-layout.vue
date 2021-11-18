@@ -53,10 +53,7 @@ export default class DocsLayout extends Mixins(WatchDocNameParam) {
         ?.scrollIntoView();
   }
 
-  @Watch(`$route.params.member`) watchMemberName(
-    newValue: string,
-    oldValue: string
-  ) {
+  @Watch(`$route.params.member`) watchMemberName(newValue: string, oldValue: string) {
     if (newValue === oldValue) return;
 
     this.navigateTo(newValue);

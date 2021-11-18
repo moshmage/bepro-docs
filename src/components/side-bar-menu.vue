@@ -1,13 +1,9 @@
 <template>
   <ul>
     <li class="mt-4" v-for="name of items" :key="name">
-      <side-bar-item
-        :route-name="$routeNames.Documentation"
-        :label="name"
-        :route-params="{ name }"
-      ></side-bar-item>
+      <side-bar-item :route-name="$routeNames.Documentation" :label="name" :route-params="{ name }"></side-bar-item>
       <template v-if="name === $route.params.name && membersOf">
-        <members-list class="SideBarText" :members="membersOf"></members-list>
+        <members-list class="SideBarText" :members="membersOf" :id="'side'"></members-list>
       </template>
     </li>
   </ul>

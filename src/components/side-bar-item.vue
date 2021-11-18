@@ -1,9 +1,5 @@
 <template>
-  <router-link
-    class="SideBarText h4"
-    :to="{ name: routeName, params: { ...routeParams } }"
-    >{{ label }}</router-link
-  >
+  <router-link class="SideBarText h4" :to="{ name: routeName, params: { ...routeParams } }">{{ label }}</router-link>
 </template>
 
 <script lang="ts">

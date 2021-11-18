@@ -1,11 +1,6 @@
 <template>
   <td>
-    <param-type
-      class="type h-75"
-      v-for="type in types.names"
-      :key="type"
-      :type="type"
-    />
+    <param-type class="type h-75" v-for="type in types.names" :key="type" :type="type" />
   </td>
 </template>
 

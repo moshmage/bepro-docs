@@ -2,7 +2,7 @@
   <div class="d-contents">
     <tr :class="{ [`level-${level}`]: true }">
       <td v-if="hasName">{{ param.name }}</td>
-            <td>{{JSON.stringify(param.type)}}</td>
+<!--            <td>{{JSON.stringify(param.type)}}</td>-->
       <param-types :types="param.type" />
       <td v-if="hasAttributes">
         <span v-if="param.optional">&lt;optional&gt;</span>
@@ -16,12 +16,10 @@
     </tr>
 
     <template v-if="param.subparams">
-      <doc-param
-        v-for="(subparam, i) of param.subparams"
-        :param="subparam"
-        :key="i"
-        :level="level + 1"
-      />
+      <doc-param v-for="(subparam, i) of param.subparams"
+                 :param="subparam"
+                 :key="i"
+                 :level="level + 1"/>
     </template>
   </div>
 </template>
